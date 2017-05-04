@@ -7,7 +7,7 @@ var displayBox=document.getElementsByClassName('game-display')[0];
 var animation=document.getElementsByClassName('animation')[0];
 var displayWord=document.getElementsByClassName('display-word')[0];
 var hangmanImage=document.getElementsByClassName('hangman-image')[0];
-
+var hint=document.getElementsByClassName("hint")[0];
 
 window.addEventListener("load", resetAction);
 reset.addEventListener("click", resetAction);
@@ -95,6 +95,7 @@ function resetAction () {
 
 function initialDisplayWordAction  (wordToEvaluate){
   displayWord.innerHTML="";
+  hint.innerHTML=wordToGuess.hint;
   for (let i=0; i<wordToGuessArray.length; i++){
     displayWord.innerHTML+=
     // purposely put i in class for future purposes
