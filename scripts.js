@@ -1,5 +1,5 @@
 var words=[];
-var test=new Word ("Fucktard", "animal");
+var test=new Word ("Giraffes", "animal");
 var guessBox=document.getElementsByClassName('guess')[0];
 var guessButton=document.getElementsByClassName('submitGuess')[0];
 var reset=document.getElementsByClassName('reset')[0];
@@ -33,7 +33,7 @@ function initiateGuess(letter){
 function checkIfRight(letters){
   if (wordToGuessArray.indexOf(letters) !=-1){
     alert("yay");
-    //display correct letters on screen
+    displayLetters(letters);
   }
   else {
     turns-=1;
@@ -42,9 +42,13 @@ function checkIfRight(letters){
 }
 
 
-function removeFromArray(item, specificArray){
-  for(var i = specificArray.length; i--;){
-	   if (specificArray[i] === item) {specificArray.splice(i, 1)};
+function displayLetters (letter) {
+
+  for (let i=0; i<wordToGuessArray.length; i++) {
+    if (wordToGuessArray[i]===letter){
+      var letterToReplace=document.getElementsByClassName('letter');
+      letterToReplace[i].innerHTML=letter;
+    }
   }
 }
 
@@ -71,7 +75,11 @@ function removeFromArray(item, specificArray){
 
 
 
-
+function removeFromArray(item, specificArray){
+  for(var i = specificArray.length; i--;){
+	   if (specificArray[i] === item) {specificArray.splice(i, 1)};
+  }
+}
 
 
 
@@ -89,7 +97,8 @@ function initialDisplayWordAction  (wordToEvaluate){
   displayWord.innerHTML="";
   for (let i=0; i<wordToGuessArray.length; i++){
     displayWord.innerHTML+=
-      "<span class='letter"+[i]+"'>___  </span>";
+    // purposely put i in class for future purposes
+      "<span class='letter letter"+[i]+"'>___  </span>";
   }
 }
 
