@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,aAAa;EACX,UAAU,ECDa,IAAI",
+"mappings": "AAAA,6BAA6B;EAC3B,UAAU,ECDa,IAAI",
 "sources": ["../styles/_game.scss","../styles/_variables.scss"],
 "names": [],
 "file": "main.css"

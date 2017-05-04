@@ -6,15 +6,15 @@ var reset=document.getElementsByClassName('reset')[0];
 var displayBox=document.getElementsByClassName('game-display')[0];
 var animation=document.getElementsByClassName('animation')[0];
 var displayWord=document.getElementsByClassName('display-word')[0];
-
+var hangmanImage=document.getElementsByClassName('hangman-image')[0];
 
 
 window.addEventListener("load", resetAction);
-guessButton.addEventListener("click", resetAction);
+reset.addEventListener("click", resetAction);
 
 function initiateGuess(letter){
-  if (letters.indexof(letter)!=-1) {
-    letters
+  if (alphabet.indexOf(letter)!=-1) {
+    console.log(letter);
     checkIfRight(letter);
   }
   else {alert("You already guessed that letter!")}
@@ -27,7 +27,13 @@ function removeFromArray(item, specificArray){
 }
 
 function checkIfRight(letter){
-
+  if (wordToGuessArray.indexOf(letter) !=1){
+    turns-=1;
+    //change picture and pop guess from alphabet
+  }
+  else {
+    //display correct letters on screen
+  }
 }
 
 
@@ -62,15 +68,17 @@ function checkIfRight(letter){
 
 function resetAction () {
   console.log("hi");
-  turns=6;
-  letters=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  turns=9;
+  alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   wordToGuess=test;
-  initialDisplayWordAction(wordToGuess.word);
+  wordToGuessArray=wordToGuess.word.split("");
+  initialDisplayWordAction(wordToGuessArray);
+  hangmanImage.src="stage1.png";
 }
 
 function initialDisplayWordAction  (wordToEvaluate){
   displayWord.innerHTML="";
-  for (let i=0; i<wordToEvaluate.split("").length; i++){
+  for (let i=0; i<wordToGuessArray.length; i++){
     displayWord.innerHTML+=
       "<span class='letter"+[i]+"'>___  </span>";
   }
