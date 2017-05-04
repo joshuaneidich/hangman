@@ -11,33 +11,42 @@ var hangmanImage=document.getElementsByClassName('hangman-image')[0];
 
 window.addEventListener("load", resetAction);
 reset.addEventListener("click", resetAction);
+guessButton.addEventListener("click", function(){
+  letterToPass=guessBox.value;
+  if (turns===0){alert("Please reset game!");}
+  else {initiateGuess(letterToPass);}
+})
+
 
 function initiateGuess(letter){
   if (alphabet.indexOf(letter)!=-1) {
     console.log(letter);
+    removeFromArray(letter, alphabet);
     checkIfRight(letter);
+
   }
   else {alert("You already guessed that letter!")}
 }
+
+
+
+function checkIfRight(letters){
+  if (wordToGuessArray.indexOf(letters) !=-1){
+    alert("yay");
+    //display correct letters on screen
+  }
+  else {
+    turns-=1;
+    hangmanImage.src="stage"+turns+".png"
+  }
+}
+
 
 function removeFromArray(item, specificArray){
   for(var i = specificArray.length-1; i--;){
 	   if (specificArray[i] === item) {specificArray.splice(i, 1)};
   }
 }
-
-function checkIfRight(letter){
-  if (wordToGuessArray.indexOf(letter) !=1){
-    turns-=1;
-    //change picture and pop guess from alphabet
-  }
-  else {
-    //display correct letters on screen
-  }
-}
-
-
-
 
 
 
@@ -68,12 +77,12 @@ function checkIfRight(letter){
 
 function resetAction () {
   console.log("hi");
-  turns=9;
+  turns=8;
   alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   wordToGuess=test;
   wordToGuessArray=wordToGuess.word.split("");
   initialDisplayWordAction(wordToGuessArray);
-  hangmanImage.src="stage1.png";
+  hangmanImage.src="stage8.png";
 }
 
 function initialDisplayWordAction  (wordToEvaluate){
