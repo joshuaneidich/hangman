@@ -1,5 +1,5 @@
 var words=[];
-var test=new Word ("alphabetical", "animal");
+var test=new Word ("Fucktard", "animal");
 var guessBox=document.getElementsByClassName('guess')[0];
 var guessButton=document.getElementsByClassName('submitGuess')[0];
 var reset=document.getElementsByClassName('reset')[0];
@@ -43,7 +43,7 @@ function checkIfRight(letters){
 
 
 function removeFromArray(item, specificArray){
-  for(var i = specificArray.length-1; i--;){
+  for(var i = specificArray.length; i--;){
 	   if (specificArray[i] === item) {specificArray.splice(i, 1)};
   }
 }
