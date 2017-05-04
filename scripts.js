@@ -12,7 +12,7 @@ var hangmanImage=document.getElementsByClassName('hangman-image')[0];
 window.addEventListener("load", resetAction);
 reset.addEventListener("click", resetAction);
 guessButton.addEventListener("click", function(){
-  letterToPass=guessBox.value;
+  letterToPass=guessBox.value.toLowerCase();
   if (turns===0){alert("Please reset game!");}
   else {initiateGuess(letterToPass);}
 })
@@ -105,7 +105,7 @@ function initialDisplayWordAction  (wordToEvaluate){
 
 
 function Word (word, hintOrCategoryOrDefinition){
-  this.word=word;
+  this.word=word.toLowerCase();
   this.hint=hintOrCategoryOrDefinition;
   words.push(this);
 }
