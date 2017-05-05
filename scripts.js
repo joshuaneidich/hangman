@@ -1,5 +1,8 @@
 var words=[];
 var test=new Word ("Giraffes", "animal");
+var test2=new Word ("refrigerator", "machine");
+var test3=new Word ("Suzuki", "car brand");
+var test4=new Word ("Saturn", "planet");
 var guessBox=document.getElementsByClassName('guess')[0];
 var guessButton=document.getElementsByClassName('submitGuess')[0];
 var reset=document.getElementsByClassName('reset')[0];
@@ -74,7 +77,7 @@ function displayLetters (letter) {
 
 
 function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 
@@ -95,7 +98,10 @@ function removeFromArray(item, specificArray){
 function resetAction () {
   turns=8;
   alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  wordToGuess=test;
+  randomWordNumber=getRandomArbitrary(0, words.length);
+  console.log(randomWordNumber);
+  wordToGuess=words[randomWordNumber];
+  console.log(wordToGuess);
   wordToGuessArray=wordToGuess.word.split("");
   initialDisplayWordAction(wordToGuessArray);
   hangmanImage.src="stage8.png";
