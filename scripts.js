@@ -13,6 +13,7 @@ window.addEventListener("load", resetAction);
 reset.addEventListener("click", resetAction);
 guessButton.addEventListener("click", function(){
   letterToPass=guessBox.value.toLowerCase();
+  guessBox.value="";
   if (turns===0){alert("Please reset game!");}
   else {initiateGuess(letterToPass);}
 })
