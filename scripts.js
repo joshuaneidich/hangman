@@ -25,9 +25,9 @@ function initiateGuess(letter){
     console.log(letter);
     removeFromArray(letter, alphabet);
     checkIfRight(letter);
-
   }
-  else {alert("You already guessed that letter!")}
+  else {
+    alert("You already guessed that letter!");}
 }
 
 
