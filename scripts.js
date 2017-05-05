@@ -11,6 +11,7 @@ var hint=document.getElementsByClassName("hint")[0];
 
 window.addEventListener("load", resetAction);
 reset.addEventListener("click", resetAction);
+
 guessButton.addEventListener("click", function(){
   letterToPass=guessBox.value.toLowerCase();
   guessBox.value="";
@@ -33,7 +34,6 @@ function initiateGuess(letter){
 
 function checkIfRight(letters){
   if (wordToGuessArray.indexOf(letters) !=-1){
-    alert("yay");
     displayLetters(letters);
   }
   else {
@@ -85,7 +85,6 @@ function removeFromArray(item, specificArray){
 
 
 function resetAction () {
-  console.log("hi");
   turns=8;
   alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   wordToGuess=test;
