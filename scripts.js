@@ -22,7 +22,21 @@ guessButton.addEventListener("click", function(){
   letterToPass=guessBox.value.toLowerCase();
   guessBox.value="";
   if (turns===0){alert("Please reset game!");}
-  else {initiateGuess(letterToPass);}
+  else if (
+    document.getElementsByClassName('toGuess').length>0) {
+      initiateGuess(letterToPass);
+    }
+    else {
+      alert("You already won!");
+      }
+
+  // else if
+  //  (
+  //    for (let i=0; i<wordToGuessArray.length; i++) {
+  //    if(document.getElementsByClassName('element').classList.contains("class_one"))
+  //
+
+
 })
 
 
@@ -38,7 +52,7 @@ function initiateGuess(letter){
 }
 
 function displayLettersGuessed(letter){
-  console.log(letter+" lettersGuessed");
+  // console.log(letter+" lettersGuessed");
   lettersGuessed.innerHTML+="<span>"+letter+"</span>";
 }
 
@@ -60,10 +74,18 @@ function displayLetters (letter) {
     if (wordToGuessArray[i]===letter){
       var letterToReplace=document.getElementsByClassName('letter');
       letterToReplace[i].innerHTML=letter;
+      letterToReplace[i].classList.add("correctGuess");
+      letterToReplace[i].classList.remove("toGuess");
     }
   }
+  checkWin();
 }
 
+function checkWin (){
+  if (document.getElementsByClassName('toGuess').length===0){
+    alert("You won!");
+  }
+}
 
 
 
@@ -100,7 +122,7 @@ function initialDisplayWordAction  (wordToEvaluate){
       console.log(i);
     displayWord.innerHTML+=
     // purposely put i in class for future purposes
-      "<span class='letter letter"+[i]+"'>___  </span>"};
+      "<span class='letter toGuess letter"+[i]+"'>___  </span>"};
   }
 }
 
