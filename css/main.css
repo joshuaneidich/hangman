@@ -1,4 +1,10 @@
-.display-word, .hangman-image {
-  margin-top: 50px; }
+body {
+  background-color: teal;
+  color: salmon; }
+
+.display-word, .hangman-image, .entry {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*# sourceMappingURL=main.css.map */

@@ -32,7 +32,6 @@ function initiateGuess(letter){
 
 function checkIfRight(letters){
   if (wordToGuessArray.indexOf(letters) !=-1){
-    alert("yay");
     displayLetters(letters);
   }
   else {
@@ -66,7 +65,9 @@ function displayLetters (letter) {
 
 
 
-
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
 
 
 
