@@ -8,6 +8,7 @@ var animation=document.getElementsByClassName('animation')[0];
 var displayWord=document.getElementsByClassName('display-word')[0];
 var hangmanImage=document.getElementsByClassName('hangman-image')[0];
 var hint=document.getElementsByClassName("hint")[0];
+var lettersGuessed=document.getElementsByClassName("letters-guessed")[0];
 
 window.addEventListener("load", resetAction);
 reset.addEventListener("click", resetAction);
@@ -23,6 +24,7 @@ guessButton.addEventListener("click", function(){
 function initiateGuess(letter){
   if (alphabet.indexOf(letter)!=-1) {
     console.log(letter);
+    displayLettersGuessed(letter);
     removeFromArray(letter, alphabet);
     checkIfRight(letter);
   }
@@ -30,6 +32,10 @@ function initiateGuess(letter){
     alert("You already guessed that letter!");}
 }
 
+function displayLettersGuessed(letter){
+  console.log(letter+" lettersGuessed");
+  lettersGuessed.innerHTML+="<span>"+letter+"</span>";
+}
 
 
 function checkIfRight(letters){
