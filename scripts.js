@@ -66,27 +66,6 @@ function displayLetters (letter) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-function getRandomArbitrary(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-
-
-
-
-
-
-
 function removeFromArray(item, specificArray){
   for(var i = specificArray.length; i--;){
 	   if (specificArray[i] === item) {specificArray.splice(i, 1)};
@@ -98,7 +77,7 @@ function removeFromArray(item, specificArray){
 function resetAction () {
   turns=8;
   alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  randomWordNumber=getRandomArbitrary(0, words.length);
+  randomWordNumber=getRandomArbitrary(0, words.length-1);
   console.log(randomWordNumber);
   wordToGuess=words[randomWordNumber];
   console.log(wordToGuess);
@@ -123,4 +102,9 @@ function Word (word, hintOrCategoryOrDefinition){
   this.word=word.toLowerCase();
   this.hint=hintOrCategoryOrDefinition;
   words.push(this);
+}
+
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(Math.floor(Math.random() * (max - min + 1)) + min);
 }
