@@ -7,4 +7,11 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
+.toGuess {
+  color: red; }
+
+.correctGuess {
+  color: black;
+  font-size: 3rem; }
+
 /*# sourceMappingURL=main.css.map */

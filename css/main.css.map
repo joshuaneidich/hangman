@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAI;EACF,gBAAgB,ECAA,IAAI;EDCpB,KAAK,ECAK,MAAM;;ACFlB,qCAAqC;EACnC,UAAU,EDDa,IAAI;ECE3B,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI",
+"mappings": "AAAA,IAAI;EACF,gBAAgB,ECAA,IAAI;EDCpB,KAAK,ECAK,MAAM;;ACFjB,qCAAqC;EACpC,UAAU,EDDa,IAAI;ECE3B,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;;AAEpB,QAAQ;EACN,KAAK,EDHS,GAAG;;ACKnB,aAAa;EACX,KAAK,EDLO,KAAK;ECMjB,SAAS,EDLD,IAAI",
 "sources": ["../styles/_global.scss","../styles/_variables.scss","../styles/_game.scss"],
 "names": [],
 "file": "main.css"

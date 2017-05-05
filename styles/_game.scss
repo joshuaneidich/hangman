@@ -1,5 +1,12 @@
-.display-word, .hangman-image, .entry{
+ .display-word, .hangman-image, .entry{
   margin-top: $display-word-topmargin;
   margin-left: auto;
   margin-right: auto;
+}
+.toGuess{
+  color: $incorrectColor;
+}
+.correctGuess{
+  color:$correctGuess;
+  font-size: $fontSize;
 }

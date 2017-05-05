@@ -122,7 +122,7 @@ function initialDisplayWordAction  (wordToEvaluate){
       console.log(i);
     displayWord.innerHTML+=
     // purposely put i in class for future purposes
-      "<span class='letter toGuess letter"+[i]+"'>___  </span>"};
+      "<span class='letter toGuess letter"+[i]+"'>_______  </span>"};
   }
 }
 
