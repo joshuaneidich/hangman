@@ -87,7 +87,7 @@ function resetAction () {
 }
 
 function initialDisplayWordAction  (wordToEvaluate){
-  displayWord.innerHTML="";
+  displayWord.innerHTML="<h2>Hint</h2>";
   hint.innerHTML=wordToGuess.hint;
   for (let i=0; i<wordToGuessArray.length; i++){
     displayWord.innerHTML+=
