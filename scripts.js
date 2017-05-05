@@ -3,6 +3,8 @@ var test=new Word ("Giraffes", "animal");
 var test2=new Word ("refrigerator", "machine");
 var test3=new Word ("Suzuki", "car brand");
 var test4=new Word ("Saturn", "planet");
+var test5=new Word ("Time Warp", "song");
+
 var guessBox=document.getElementsByClassName('guess')[0];
 var guessButton=document.getElementsByClassName('submitGuess')[0];
 var reset=document.getElementsByClassName('reset')[0];
@@ -90,9 +92,15 @@ function initialDisplayWordAction  (wordToEvaluate){
   displayWord.innerHTML="<h2>Hint</h2>";
   hint.innerHTML=wordToGuess.hint;
   for (let i=0; i<wordToGuessArray.length; i++){
+    if(/^\s+$/.test(wordToGuessArray[i])){
+      console.log("space check");
+      displayWord.innerHTML+="<span class='letter letter"+[i]+"'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>";
+    }
+    else {
+      console.log(i);
     displayWord.innerHTML+=
     // purposely put i in class for future purposes
-      "<span class='letter letter"+[i]+"'>___  </span>";
+      "<span class='letter letter"+[i]+"'>___  </span>"};
   }
 }
 
