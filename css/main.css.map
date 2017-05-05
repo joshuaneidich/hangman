@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,6BAA6B;EAC3B,UAAU,ECDa,IAAI",
-"sources": ["../styles/_game.scss","../styles/_variables.scss"],
+"mappings": "AAAA,IAAI;EACF,gBAAgB,ECAA,IAAI;EDCpB,KAAK,ECAK,MAAM;;ACFlB,qCAAqC;EACnC,UAAU,EDDa,IAAI;ECE3B,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI",
+"sources": ["../styles/_global.scss","../styles/_variables.scss","../styles/_game.scss"],
 "names": [],
 "file": "main.css"
 }

@@ -1,3 +1,5 @@
-.display-word, .hangman-image{
+.display-word, .hangman-image, .entry{
   margin-top: $display-word-topmargin;
+  margin-left: auto;
+  margin-right: auto;
 }
